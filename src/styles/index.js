@@ -4,6 +4,15 @@ import Stroke from 'ol/style/Stroke';
 import Circle from 'ol/style/Circle';
 import Text from 'ol/style/Text';
 
+// Import d3 color scale functions.
+import { scaleSequential, scaleOrdinal } from 'd3-scale';
+import {
+  schemeTableau10,
+  interpolateRdYlGn,
+  schemeRdYlGn,
+  interpolateViridis,
+} from 'd3-scale-chromatic';
+
 // Define the available colors and their associated RGBA values.
 // Colors are listed in README.md documentation, keep these in sync.
 const colors = {
@@ -67,3 +76,12 @@ export function clusterStyle(feature) {
   }
   return style;
 }
+
+export const chromaticColors = {
+  scaleOrdinal,
+  scaleSequential,
+  schemeTableau10,
+  interpolateRdYlGn,
+  schemeRdYlGn,
+  interpolateViridis,
+};
